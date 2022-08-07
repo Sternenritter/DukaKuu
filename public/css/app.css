@@ -43,6 +43,9 @@ nav {
 .aic {
   align-items: center;
 }
+.ais {
+  align-items: flex-start;
+}
 .jce {
   justify-content: end;
 }
@@ -180,9 +183,18 @@ p {
 .bg-white {
   background-color: white;
 }
+.bg-yellow {
+  background-color: #ffef00;
+}
 .br-5 {
   border-radius: 5px;
 }
 .d-flex {
   display: flex;
+}
+label {
+  font-size: 2.5vh;
+}
+.g-1 {
+  gap: 1rem;
 }
