@@ -40,7 +40,7 @@
             </ul>
         </div>
         <div class="lr aic jcc">
-            <button class="btn btn-primary lr jcc aic px-3">
+            <button class="btn btn-primary lr jcc aic px-3" onclick="showModule()">
                 SIGN IN
                 <span class="material-symbols-outlined px-2">
                     login
@@ -109,6 +109,52 @@
 
         </div>
     </section>
+    <div class="sign-in-module jcc aic" id="module">
+        <div class="bg-white p-4 s-in w-50 br-5 h-fit">
+            <div class="header ud w-100">
+                <div class="lr jsb w-100">
+                    <h3>SIGN IN</h3>
+                    <button class="btn btn-danger px-3" onclick="closeModule()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <span class="line-dark"></span>
+            </div>
+            <form class="ud w-100 py-4">
+                <div class="ud w-100">
+                    <label for="user-email">E mail:</label>
+                    <input type="email" name="" id="" class="form-control" placeholder="Enter your email here">
+                </div>
+                <div class="ud w-100 py-4">
+                    <label for="user-email">Password:</label>
+                    <input type="password" name="" id="" class="form-control" placeholder="Enter your password here">
+                </div>
+                <button class="btn btn-primary w-100" type="submit">LOG IN</button>
+                <div class="lr jcc aic py-3">
+                    <h5 class="px-3">Already have an account? </h5>
+                    <button class="btn btn-outline-secondary ">SIGN UP</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+<script>
+    var module = document.getElementById("module");
+
+
+    function showModule() {
+        module.style.display = "flex";
+    }
+
+    function closeModule() {
+        module.style.display = "none";
+    }
+    //js onclick listener focusing on the back only-because I'm an ass dude 
+    module.addEventListener('click', e => {
+        if (e.target == module) {
+            module.style.display = "none";
+        }
+    }, {
+        capture: true
+    })
+</script>
 
 </html>
