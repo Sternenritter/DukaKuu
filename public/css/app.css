@@ -5,8 +5,8 @@ body {
   background-color: #ffef00;
 }
 nav {
-  height: 15vh;
-  padding-block: 2rem;
+  height: fit-content;
+  padding-block: 1rem;
   padding-inline: 4rem;
 }
 .custom-dark {
@@ -31,8 +31,20 @@ nav {
 .jsb {
   justify-content: space-between;
 }
+.jsa {
+  justify-content: space-around;
+}
+.jss {
+  justify-content: start;
+}
+.jse {
+  justify-content: space-evenly;
+}
 .aic {
   align-items: center;
+}
+.jce {
+  justify-content: end;
 }
 .td-none {
   text-decoration: none;
@@ -51,10 +63,103 @@ a {
 }
 a:hover {
   color: white;
-  text-shadow: 0px 0px 10px white;
-  transform: scale(1.1);
   border-bottom: 1px solid white;
 }
 .f-large {
   font-size: 2vh;
+}
+.f-xlarge {
+  font-size: 3vh;
+}
+.f-xxlarge {
+  font-size: 6vh;
+}
+.img-display {
+  width: 18vw;
+  height: 20vw;
+  object-fit: cover;
+}
+.h-fit {
+  height: fit-content;
+}
+.py-thick {
+  padding-block-start: 3vh;
+}
+.py-xthick {
+  padding-block-start: 6vh;
+}
+.g-5 {
+  gap: 5vh;
+}
+p {
+  font-size: 2vh;
+}
+.italic {
+  font-style: italic;
+}
+.f-lato {
+  font-family: "Lato", sans-serif;
+}
+.social-links {
+  height: fit-content;
+}
+
+.social-links li {
+  margin: 0;
+  color: #333;
+  font-size: 3.5vh;
+}
+.social-links li {
+  transition: transform 0.1s;
+}
+.social-links li:hover {
+  transform: scale(1.1);
+}
+.line {
+  height: 2px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: white;
+}
+.br-200 {
+  border-radius: 200px;
+}
+.right-angle {
+  border-radius: 200px;
+  padding: 0.7rem;
+  border: 1px solid #333;
+  background-color: #ffef00;
+  color: #333;
+  transition: all 0.6s;
+}
+.right-angle:hover {
+  background-color: #333;
+  color: #ffef00;
+}
+.img-sm {
+  width: 5vw;
+  height: 10vh;
+  object-fit: cover;
+}
+.rotate {
+  transform: rotate(-90deg);
+}
+.view-store {
+  padding: 1rem;
+  font-size: 3vh;
+  width: 20vw;
+  background-color: #ffef00;
+  color: #333;
+  border: 1px solid #333;
+  transition: all 0.6s;
+}
+.view-store:hover {
+  background-color: #333;
+  color: #ffef00;
+}
+.td-under {
+  text-decoration: underline;
+}
+.top h3 {
+  font-size: 6vh;
 }
