@@ -69,7 +69,7 @@
                 <div class="desc ud jcc aic w-100">
                     <div class="top lr jcc py-3">
                         <h3>GET YOUR</h3>
-                        <h3 class="px-2 c-white td-under">CUSTOM FABRICS</h3>
+                        <h3 class="special px-2 c-white td-under">CUSTOM FABRICS</h3>
                         <h3>AT</h3>
                     </div>
                     <div class="logo jcc aic">
