@@ -88,6 +88,46 @@
 
         </div>
     </section>
+    <section class="section-two ud w-100 p-4 bg-dark g-5">
+        <div class="ud w-100 jcc aic c-white">
+            <h3 class="f-lato">OUR CLIENTS</h3>
+            <span class="line"></span>
+        </div>
+        <div class="lr w-100 g-5 aic jcc c-white py-4">
+            <div class="ud jcc aic">
+                <img src="assets/person1.jpg" class="img-round" alt="">
+                <p class="w-50 py-3">
+                    “Literally the only place I
+                    come to find new clothes.
+                    Simply the best”
+                </p>
+            </div>
+            <div class="ud jcc aic">
+                <img src="assets/person2.jpg" class="img-round" alt="">
+                <p class="w-50 py-3">
+                    “Literally the only place I
+                    come to find new clothes.
+                    Simply the best”
+                </p>
+            </div>
+            <div class="ud jcc aic">
+                <img src="assets/person3.jpg" class="img-round" alt="">
+                <p class="w-50 py-3">
+                    “Literally the only place I
+                    come to find new clothes.
+                    Simply the best”
+                </p>
+            </div>
+            <div class="ud jcc aic">
+                <img src="assets/person4.jpg" class="img-round" alt="">
+                <p class="w-50 py-3">
+                    “Literally the only place I
+                    come to find new clothes.
+                    Simply the best”
+                </p>
+            </div>
+        </div>
+    </section>
     <div class="sign-in-module jcc aic" id="module">
         <div class="bg-white p-4 s-in w-50 br-5 h-fit">
             <div class="header ud w-100">

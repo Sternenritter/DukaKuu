@@ -198,3 +198,9 @@ label {
 .g-1 {
   gap: 1rem;
 }
+.img-round {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
