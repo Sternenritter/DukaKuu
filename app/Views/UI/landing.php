@@ -6,28 +6,7 @@
 </head>
 
 <body>
-    <nav class="app-navbar w-100 custom-dark lr jsb aic px-4">
-        <div class="logo">
-            <img src="assets/DukaKuu.png" alt="" class="img-logo">
-        </div>
-        <div class="nav-options">
-            <ul class="lr jcc aic td-none lst-none c-white p-0 m-0">
-                <li class="px-3 c-white"><a href="">NEW ARRIVALS</a></li>
-                <li class="px-3 c-white"><a href="">MENSWEAR</a></li>
-                <li class="px-3 c-white"><a href="">LADIESWEAR</a></li>
-                <li class="px-3 c-white"><a href="">KIDS</a></li>
-            </ul>
-        </div>
-        <div class="lr aic jcc">
-            <button class="btn btn-primary lr jcc aic px-3" onclick="showModule()">
-                SIGN IN
-                <span class="material-symbols-outlined px-2">
-                    login
-                </span>
-            </button>
-        </div>
-
-    </nav>
+    <?php include("components/navbar.php"); ?>
     <section class="section-one ud w-100 p-4">
         <div class="lr jsb aic w-100">
             <div class="ud jsb w-50">
@@ -53,8 +32,8 @@
                 </div>
             </div>
             <div class="lr aic g-5 w-50 py-thick jce">
-                <img src="assets/img1.jpg" alt="" class="img-display">
-                <img src="assets/img2.jpg" alt="" class="img-display">
+                <img src="assets/fashion1.jpg" alt="" class="img-display">
+                <img src="assets/fashion2.jpg" alt="" class="img-display">
                 <div class="ud h-fit">
                     <button class="right-angle lr jcc aic">View more <i class="fa-solid fa-angle-right f-large px-3"></i> </button>
                 </div>
@@ -76,12 +55,15 @@
                         <img src="assets/DukaKuu.png" class="img-logo" alt="">
                     </div>
                     <div class="bn jcc aic py-3">
-                        <button class="view-store lr jcc aic ">
-                            VIEW STORE
-                            <span class="material-symbols-outlined f-xlarge px-3">
-                                north_east
-                            </span>
-                        </button>
+                        <a href="store">
+                            <button class="view-store lr jcc aic ">
+                                VIEW STORE
+                                <span class="material-symbols-outlined f-xlarge px-3">
+                                    north_east
+                                </span>
+                            </button>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -128,6 +110,7 @@
             </div>
         </div>
     </section>
+    <?php include("components/footer.php"); ?>
     <div class="sign-in-module jcc aic" id="module">
         <div class="bg-white p-4 s-in w-50 br-5 h-fit">
             <div class="header ud w-100">

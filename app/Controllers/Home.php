@@ -12,4 +12,8 @@ class Home extends BaseController
     {
         return view('UI/registration.php');
     }
+    public function store()
+    {
+        return view('UI/store.php');
+    }
 }
