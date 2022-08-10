@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('register', 'Home::register');
 $routes->get('store', 'Home::store');
+$routes->post('/registerCustomer', 'CustomerController::registerCustomer');
 
 /*
  * --------------------------------------------------------------------
