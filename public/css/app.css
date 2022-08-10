@@ -300,3 +300,32 @@ label {
   background-color: #fff;
   color: #333;
 }
+.alert {
+  padding-inline: 1rem;
+  border-radius: 5px;
+}
+.red {
+  background-color: rgb(255, 112, 112);
+  color: rgb(170, 45, 45);
+  border: 1px solid rgb(170, 45, 45);
+}
+.success {
+  background-color: rgb(110, 255, 110);
+  color: green;
+  border: 1px solid green;
+}
+.warning {
+  background-color: rgb(255, 174, 53);
+  color: rgb(255, 68, 0);
+  border: 1px solid rgb(255, 68, 0);
+}
+.close-popup {
+  background-color: rgba(51, 51, 51, 0);
+  border: none;
+  border-radius: 5px;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+}
+.close-popup:hover {
+  background-color: rgba(51, 51, 51, 0.5);
+}

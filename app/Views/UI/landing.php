@@ -111,7 +111,20 @@
         </div>
     </section>
     <?php include("components/footer.php"); ?>
-    <div class="sign-in-module jcc aic" id="module">
+    <div class="sign-in-module ud jcc aic" id="module">
+        <span class="alert red w-50 my-2 lr jsb aic" id="alert">
+            Error message.
+            <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+        </span>
+        <span class="alert success w-50 my-2 lr jsb aic">
+            Success message.
+            <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+        </span>
+        <span class="alert warning w-50 my-2 lr jsb aic">
+            Warning message.
+            <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+        </span>
+
         <div class="bg-white p-4 s-in w-50 br-5 h-fit">
             <div class="header ud w-100">
                 <div class="lr jsb w-100">
@@ -140,7 +153,7 @@
 </body>
 <script>
     var module = document.getElementById("module");
-
+    // var alert = document.getElementById("alert");
 
     function showModule() {
         module.style.display = "flex";
@@ -148,6 +161,13 @@
 
     function closeModule() {
         module.style.display = "none";
+    }
+
+    function closeAlert() {
+        els = document.getElementsByClassName('alert');
+        for (i in els) {
+            els[i].style.display = "none";
+        }
     }
     //js onclick listener focusing on the back only-because I'm an ass dude 
     module.addEventListener('click', e => {
