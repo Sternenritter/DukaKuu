@@ -16,4 +16,8 @@ class Home extends BaseController
     {
         return view('UI/store.php');
     }
+    public function cart()
+    {
+        return view('UI/cart.php');
+    }
 }
