@@ -31,7 +31,12 @@ class CustomerController extends BaseController
             ];
             
             $model = new CustomerModel();
-            $model->save($customerData);
+            try {
+              $model->save($customerData);
+            } catch (\Throwable $th) {
+              echo $th;
+            }
+            
 
             
             

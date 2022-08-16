@@ -1,0 +1,44 @@
+CRITICAL - 2022-08-16 01:08:40 --> Trying to access array offset on value of type null
+#0 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(738): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/cyprian/Projects/coderriters/DukaKuu/system/Model.php(625): CodeIgniter\BaseModel->insert()
+#2 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#3 /home/cyprian/Projects/coderriters/DukaKuu/app/Controllers/CustomerController.php(34): CodeIgniter\BaseModel->save()
+#4 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(832): App\Controllers\CustomerController->registerCustomer()
+#5 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/cyprian/Projects/coderriters/DukaKuu/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 /home/cyprian/Projects/coderriters/DukaKuu/system/Commands/Server/rewrite.php(43): require_once('...')
+#9 {main}
+CRITICAL - 2022-08-16 01:13:25 --> Trying to access array offset on value of type null
+#0 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(738): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/cyprian/Projects/coderriters/DukaKuu/system/Model.php(625): CodeIgniter\BaseModel->insert()
+#2 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#3 /home/cyprian/Projects/coderriters/DukaKuu/app/Controllers/CustomerController.php(34): CodeIgniter\BaseModel->save()
+#4 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(832): App\Controllers\CustomerController->registerCustomer()
+#5 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/cyprian/Projects/coderriters/DukaKuu/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 /home/cyprian/Projects/coderriters/DukaKuu/system/Commands/Server/rewrite.php(43): require_once('...')
+#9 {main}
+CRITICAL - 2022-08-16 01:13:54 --> Trying to access array offset on value of type null
+#0 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(738): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/cyprian/Projects/coderriters/DukaKuu/system/Model.php(625): CodeIgniter\BaseModel->insert()
+#2 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#3 /home/cyprian/Projects/coderriters/DukaKuu/app/Controllers/CustomerController.php(34): CodeIgniter\BaseModel->save()
+#4 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(832): App\Controllers\CustomerController->registerCustomer()
+#5 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/cyprian/Projects/coderriters/DukaKuu/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 /home/cyprian/Projects/coderriters/DukaKuu/system/Commands/Server/rewrite.php(43): require_once('...')
+#9 {main}
+CRITICAL - 2022-08-16 01:14:17 --> Trying to access array offset on value of type null
+#0 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(738): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/cyprian/Projects/coderriters/DukaKuu/system/Model.php(625): CodeIgniter\BaseModel->insert()
+#2 /home/cyprian/Projects/coderriters/DukaKuu/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#3 /home/cyprian/Projects/coderriters/DukaKuu/app/Controllers/CustomerController.php(34): CodeIgniter\BaseModel->save()
+#4 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(832): App\Controllers\CustomerController->registerCustomer()
+#5 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /home/cyprian/Projects/coderriters/DukaKuu/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/cyprian/Projects/coderriters/DukaKuu/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 /home/cyprian/Projects/coderriters/DukaKuu/system/Commands/Server/rewrite.php(43): require_once('...')
+#9 {main}
