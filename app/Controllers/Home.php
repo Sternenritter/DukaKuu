@@ -20,4 +20,12 @@ class Home extends BaseController
     {
         return view('UI/cart.php');
     }
+    public function profile()
+    {
+        return view('UI/profile.php');
+    }
+    public function admin()
+    {
+        return view('ADMIN/admin.php');
+    }
 }

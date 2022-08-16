@@ -8,7 +8,10 @@
         <h2 class="txt-uc ">THE DUKA</h2>
     </div>
     <div class="lr jcc aic g-5">
-        <button class="btn-img"><img src="assets/teen.png" alt="" class="img-btn"></button>
+        <a href="profile">
+            <button class="btn-img"><img src="assets/teen.png" alt="" class="img-btn"></button>
+        </a>
+
 
         <a href="cart" class="m-0 p-0">
             <button class="btn-cart p-3 ud jcc aic br-5">

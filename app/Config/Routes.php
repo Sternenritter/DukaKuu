@@ -35,6 +35,8 @@ $routes->get('/', 'Home::index');
 $routes->get('register', 'Home::register');
 $routes->get('store', 'Home::store');
 $routes->get('cart', 'Home::cart');
+$routes->get('profile', 'Home::profile');
+$routes->get('admin', 'Home::admin');
 $routes->post('/registerCustomer', 'CustomerController::registerCustomer');
 
 

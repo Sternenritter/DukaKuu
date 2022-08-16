@@ -107,6 +107,10 @@ a:hover {
 .h-fit {
   height: fit-content;
 }
+.h-70 {
+  height: 70vh;
+  overflow-y: scroll;
+}
 .h-store {
   height: 87vh;
 }
@@ -185,6 +189,11 @@ p {
   height: 10vh;
   object-fit: cover;
 }
+.img-xsm {
+  width: 8vw;
+  height: 5vh;
+  object-fit: cover;
+}
 .rotate {
   transform: rotate(-90deg);
 }
@@ -220,7 +229,7 @@ p {
   background-color: white;
 }
 .bg-yellow {
-  background-color: rgb(255, 239, 0);
+  background-color: #ffef00;
 }
 .bg-grey {
   background-color: #e3e3e3;
@@ -340,6 +349,9 @@ label {
 .close-popup:hover {
   background-color: rgba(51, 51, 51, 0.5);
 }
+.color-white {
+  color: white;
+}
 .grid-layout {
   padding-inline: 5rem;
   display: grid;
@@ -354,15 +366,72 @@ label {
 .color-dark {
   color: #707070;
 }
+.color-yellow {
+  color: #ffef00;
+}
+.color-blue {
+  color: #0088ff;
+  cursor: pointer;
+}
 thead {
   border-bottom: 2px solid #707070;
+  position: sticky;
+  top: 0;
+  /* backdrop-filter: #333; */
 }
 .w-custom-table {
   width: 65vw;
 }
-.w-15-vw{
+.w-15-vw {
   width: 15vw;
 }
-.py-custom{
+.py-custom {
   padding-block: 1rem;
+}
+*::-webkit-scrollbar {
+  width: 0.5vw;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #707070;
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-track {
+  background-color: rgba(51, 51, 51, 0);
+}
+.w-custom-30 {
+  width: 35vw;
+}
+.visa {
+  border-radius: 5px;
+  border: none;
+  padding-block: 0.5rem;
+  background-color: #23236e;
+  width: 20vw;
+}
+.side-btn {
+  background-color: #333;
+  padding: 3rem;
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+.side-btn:hover {
+  background-color: #707070;
+}
+.btn-logout {
+  background-color: #b14040;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.logout {
+  padding-block: 4rem;
+}
+.btn-logout:hover {
+  background-color: #d85f5f;
+  transform: scale(1.05);
+}
+.h-custom-fit {
+  height: 86.5vh;
 }
