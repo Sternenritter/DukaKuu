@@ -112,19 +112,20 @@
     </section>
     <?php include("components/footer.php"); ?>
     <div class="sign-in-module ud jcc aic" id="module">
-        <span class="alert red w-50 my-2 lr jsb aic" id="alert">
-            Error message.
-            <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
-        </span>
-        <span class="alert success w-50 my-2 lr jsb aic">
-            Success message.
-            <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
-        </span>
-        <span class="alert warning w-50 my-2 lr jsb aic">
-            Warning message.
-            <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
-        </span>
-
+        <div class="error_messages">
+            <!-- <span class="alert red w-100 my-2 lr jsb aic" id="alert">
+                Error message.
+                <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+            </span>
+            <span class="alert success w-100 my-2 lr jsb aic">
+                Success message.
+                <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+            </span>
+            <span class="alert warning w-100 my-2 lr jsb aic">
+                Warning message.
+                <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+            </span> -->
+        </div>
         <div class="bg-white p-4 s-in w-50 br-5 h-fit">
             <div class="header ud w-100">
                 <div class="lr jsb w-100">
@@ -136,13 +137,13 @@
             <form class="ud w-100 py-4">
                 <div class="ud w-100">
                     <label for="user-email">E mail:</label>
-                    <input type="email" name="" id="" class="form-control" placeholder="Enter your email here">
+                    <input type="email" name="" id="user-email" class="form-control" placeholder="Enter your email here">
                 </div>
                 <div class="ud w-100 py-4">
-                    <label for="user-email">Password:</label>
-                    <input type="password" name="" id="" class="form-control" placeholder="Enter your password here">
+                    <label for="user-password">Password:</label>
+                    <input type="password" name="" id="user-password" class="form-control" placeholder="Enter your password here">
                 </div>
-                <button class="btn btn-primary w-100" type="submit">LOG IN</button>
+                <button id="login-btn" type="button" class="btn btn-primary w-100">LOG IN</button>
                 <div class="lr jcc aic py-3">
                     <h5 class="px-3">Don't have an account? </h5>
                     <a href="register"><button class="btn btn-outline-secondary " type="button">SIGN UP</button></a>
@@ -177,6 +178,111 @@
     }, {
         capture: true
     })
+
+    function addWarning(message) {
+        let full_message = `<span class="alert warning w-100 my-2 lr jsb aic">` + message +
+            `<button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+                            </span>`;
+        $('#module>.error_messages').append(full_message);
+    }
+
+    function addError(message) {
+        let full_message = `<span class="alert red w-100 my-2 lr jsb aic">` + message +
+            `<button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+                            </span>`;
+        $('#module>.error_messages').append(full_message);
+    }
+
+    function login(email, password) {
+        if (validateLoginData(email, password)) {
+            data = {
+                'email': email,
+                'password': password
+            };
+            $.ajax({
+                url: '/customerLogin',
+                type: 'POST',
+                data: data,
+                success: function(response) {
+                    if (response.status == 1) {
+                        alert('Logged In Successfully');
+                        window.location.reload();
+
+                    } else if (response.status == 0) {
+                        $('#module>.error_messages').html('');
+                        let errors = response.errors;
+                        addError(errors.password);
+                    } else {
+                        console.log(response);
+                    }
+                }
+            });
+
+        }
+
+    }
+
+    function validateLoginData(email, password) {
+        $('#module>.error_messages').html('');
+        var formIsValid = true;
+        var email_regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        var password_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/
+
+        if (!email_regex.test(email)) {
+            addWarning('invalid email');
+            $('#email_error').css('display', 'block');
+            formIsValid = false;
+        } else {
+            $('#email_error').css('display', 'none');
+        }
+
+        if (!password_regex.test(password)) {
+            addWarning('invalid password');
+            $('#password_error').css('display', 'block');
+
+            if (password.search(/(?=.*[a-z])/)) {
+                addWarning('password must have at least one lowercase character');
+                $('#password_no_lowercase_error').css('display', 'block');
+            } else {
+                $('#password_no_lowercase_error').css('display', 'none');
+            }
+
+            if (password.search(/(?=.*[A-Z])/)) {
+                addWarning('password must have at least one uppercase character');
+                $('#password_no_uppercase_error').css('display', 'block');
+            } else {
+                $('#password_no_uppercase_error').css('display', 'none');
+            }
+
+            if (password.search(/(?=.*[0-9])/)) {
+                addWarning('password must have at least one numeric character');
+                $('#password_no_numeric_error').css('display', 'block');
+            } else {
+                $('#password_no_numeric_error').css('display', 'none');
+            }
+
+            if (password.search(/(?=.{8,})/)) {
+                addWarning('password must be at least 8 characters long');
+                $('#password_length_error').css('display', 'block');
+            } else {
+                $('#password_length_error').css('display', 'none');
+            }
+            formIsValid = false;
+        } else {
+            $('#password_error').css('display', 'none');
+        }
+
+        return formIsValid;
+    }
+
+    $(document).ready(function() {
+        $('#login-btn').on('click', function() {
+            let email = $('#user-email').val();
+            let password = $('#user-password').val();
+            login(email, password);
+
+        });
+    });
 </script>
 
 </html>

@@ -8,7 +8,6 @@ class CustomerController extends BaseController
 {
 
     public function registerCustomer() {
-        $data = [];
         if ($this->request->getMethod() == 'post') {
             $rules = [
                 'username' => 'required|min_length[3]|max_length[20]|is_unique[customers.username]',
@@ -46,21 +45,6 @@ class CustomerController extends BaseController
         }
 
         return $this->response->setJSON(['message' => 'user added successfully', 'status' => 1]);
-    }
-
-    //Admin credentials are static for now..
-    public function adminLogin(){
-      if($this->request->getMethod()==='post'){
-        //Default admin credentials stored as variables, to be matched against form inputs. 
-        $adminEmail = 'admin@dukakuu.com';
-        $adminPassword = 'coderiters_123';
-        if($this->request->getPost('email')===$adminEmail && $this->rquest->getPost('password')===$adminPassword){
-          return redirect()->to('Home/index');
-        }
-        else{
-          return redirect()->to('Home/login');
-        }
-      }
     }
 }
  

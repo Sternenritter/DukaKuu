@@ -161,7 +161,7 @@
                     last_name: $('#last_name').val(),
                     email: $('#email').val(),
                     password: $('#password').val(),
-                }
+                };
 
                 $.ajax({
                     url: '/registerCustomer',
@@ -179,7 +179,7 @@
                             if (errors.email) {
                                 alert('A user with the same email address already exists, try a different one');
 
-                            } 
+                            }
                             if (!(errors.email || errors.username)) {
                                 console.log(response);
                             }
