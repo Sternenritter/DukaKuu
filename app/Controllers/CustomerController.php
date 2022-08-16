@@ -18,6 +18,7 @@ class CustomerController extends BaseController
           ];
 
           if (!$this->validate($rules)) {
+            // $data['validation'] = $this->validator;
             $errors = $this->validator->getErrors();
             return $this->response->setJSON(['errors' => $errors, 'status' => 0]);
           } else {
@@ -35,52 +36,15 @@ class CustomerController extends BaseController
             } catch (\Throwable $th) {
               echo $th;
             }
-                  
+            
+
+            
+            
           }
+
         }
+
         return $this->response->setJSON(['message' => 'user added successfully', 'status' => 1]);
     }
-
-    public function login() {
-      if ($this->request->getMethod() == 'post') {
-          $rules = [
-              'email' => 'required|min_length[6]|max_length[50]',
-              'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
-        ];
-
-        $errors = [
-          'password' => [ 'validateUser' => 'Email or Password is incorrect']
-        ];
-
-        if (!$this->validate($rules, $errors)) {
-          $errors = $this->validator->getErrors();
-          return $this->response->setJSON(['errors' => $errors, 'status' => 0]);
-        } else {          
-          try {
-            $model = new CustomerModel();
-            $user = $model->where('email', $this->request->getVar('email'))->first();
-            $this->setUserSession($user);
-          } catch (\Throwable $th) {
-            echo $th;
-          }
-                
-        }
-      }
-      return $this->response->setJSON(['message' => 'logged in successfully', 'status' => 1]);
-  }
-
-  public function setUserSession($user) {
-    $array = [
-      'user_id' => $user['user_id'],
-      'first_name' => $user['first_name'],
-      'last_name' => $user['last_name'],
-      'email' => $user['email'],
-      'isLoggedIn' => true
-    ];
-
-    $session = session();
-    $session->set($array);
-    return true;
-  }
 }
  
