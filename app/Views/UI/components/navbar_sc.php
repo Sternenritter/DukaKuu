@@ -11,8 +11,6 @@
         <a href="profile">
             <button class="btn-img"><img src="assets/teen.png" alt="" class="img-btn"></button>
         </a>
-
-
         <a href="cart" class="m-0 p-0">
             <button class="btn-cart p-3 ud jcc aic br-5">
                 <span class="material-symbols-outlined f-xxlarge">shopping_cart</span>

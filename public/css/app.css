@@ -194,9 +194,22 @@ p {
   height: 5vh;
   object-fit: cover;
 }
+.img-xxsm {
+  padding-inline: 1rem;
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
 .rotate {
   transform: rotate(-90deg);
 }
+.users-tbl {
+  color: #333;
+  padding-inline: 3rem;
+  /* height: 60vh; */
+  overflow-y: scroll;
+}
+
 .view-store {
   padding: 1rem;
   font-size: 3vh;
@@ -252,7 +265,9 @@ label {
   object-fit: cover;
   border-radius: 50%;
 }
-
+.font-antic {
+  font-family: "Antic Slab", serif;
+}
 .special {
   transition: all 0.6s ease-in-out;
 }
@@ -271,6 +286,19 @@ label {
 }
 .h-stretch {
   height: inherit;
+}
+.panel {
+  display: none;
+  flex-direction: column;
+}
+.img-tbl {
+  width: 10vw;
+  height: 20vh;
+  object-fit: contain;
+  padding-block: 0.5rem;
+}
+.h-100-vh {
+  height: 80vh;
 }
 .jsse {
   justify-self: end;
@@ -433,5 +461,8 @@ thead {
   transform: scale(1.05);
 }
 .h-custom-fit {
-  height: 86.5vh;
+  height: 80vh;
+}
+.tbody tr {
+  border-bottom: 1px solid #707070;
 }

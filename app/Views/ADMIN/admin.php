@@ -32,7 +32,9 @@
 <body class="custom-dark">
     <nav class="app-navbar w-100 custom-dark lr jsb aic px-4">
         <div class="logo">
-            <img src="assets/DukaKuu.png" alt="" class="img-logo">
+            <a href="/">
+                <img src="assets/DukaKuu.png" alt="" class="img-logo">
+            </a>
         </div>
 
         <div class="lr aic jcc g-1 color-white">
@@ -41,32 +43,76 @@
         </div>
     </nav>
     <section class="w-100 lr aic">
-        <div class="ud w-25 aic jsb custom-dark h-custom-fit">
+        <div class="ud w-25 aic jsb custom-dark h-100-vh">
             <div class="ud w-100 aic h-fit">
-                <button class="side-btn">
+                <button class="side-btn" id="dash-btn">
                     DASHBOARD
                 </button>
-                <button class="side-btn">
+                <button class="side-btn" id="user-btn">
                     USERS
                 </button>
-                <button class="side-btn">
+                <button class="side-btn" id="products-btn">
                     PRODUCTS
                 </button>
-                <button class="side-btn">
+                <button class="side-btn" id="profile-btn">
                     PROFILE
                 </button>
             </div>
             <div class="logout px-4 w-100">
-                <button class="btn-logout w-100">
-                    LOGOUT
-                </button>
+                <a href="/">
+                    <button class="btn-logout w-100">
+                        LOGOUT
+                    </button>
+                </a>
+
             </div>
 
         </div>
-        <div class="ud w-75 h-custom-fit bg-yellow panel">
-          
-        </div>
+        <?php include("PANELS/dashboard.php"); ?>
+        <?php include("PANELS/users.php"); ?>
+        <?php include("PANELS/products.php"); ?>
+        <?php include("PANELS/profile.php"); ?>
     </section>
+    <div class="branding ud jcc aic p-4 w-100">
+        <h4 class="color-yellow">copyright DUKAKUU® 2022 </h4>
+    </div>
 </body>
+<script>
+    const user_panel = document.getElementById("user-panel");
+    const dash_panel = document.getElementById("dashboard-panel");
+    const products_panel = document.getElementById("products-panel");
+    const profile_panel = document.getElementById("profile-panel");
+    const user_panel_btn = document.getElementById("user-btn");
+    const dash_panel_btn = document.getElementById("dash-btn");
+    const products_panel_btn = document.getElementById("products-btn");
+    const profile_panel_btn = document.getElementById("profile-btn");
+
+
+    user_panel_btn.addEventListener("click", function() {
+        user_panel.style.display = "inline-flex";
+        dash_panel.style.display = "none";
+        products_panel.style.display = "none";
+        profile_panel.style.display = "none";
+    })
+    dash_panel_btn.addEventListener("click", function() {
+        user_panel.style.display = "none";
+        dash_panel.style.display = "inline-flex";
+        products_panel.style.display = "none";
+        profile_panel.style.display = "none";
+    })
+    products_panel_btn.addEventListener("click", function() {
+        user_panel.style.display = "none";
+        dash_panel.style.display = "none";
+        products_panel.style.display = "inline-flex";
+        profile_panel.style.display = "none";
+    })
+    profile_panel_btn.addEventListener("click", function() {
+        user_panel.style.display = "none";
+        dash_panel.style.display = "none";
+        products_panel.style.display = "none";
+        profile_panel.style.display = "inline-flex";
+    })
+</script>
+
 
 </html>
