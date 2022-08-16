@@ -13,12 +13,14 @@ class CustomerModel extends Model {
     {
         $data = $this->passwordHash($data);
         
-        
+        return $data;  
     }
 
     protected function beforeUpdate (array $data)
     {
         $data = $this->passwordHash($data);
+
+        return $data;  
     }
 
     protected function passwordHash (array $data)

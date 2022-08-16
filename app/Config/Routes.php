@@ -38,6 +38,7 @@ $routes->get('cart', 'Home::cart');
 $routes->get('profile', 'Home::profile');
 $routes->get('admin', 'Home::admin');
 $routes->post('/registerCustomer', 'CustomerController::registerCustomer');
+$routes->post('/customerLogin', 'CustomerController::login');
 
 
 /*

@@ -699,9 +699,11 @@ abstract class BaseModel
      */
     public function insert($data = null, bool $returnID = true)
     {
+        
         $this->insertID = 0;
 
         $data = $this->transformDataToArray($data, 'insert');
+        
 
         // Validate data before saving.
         if (! $this->skipValidation && ! $this->cleanRules()->validate($data)) {
@@ -711,7 +713,7 @@ abstract class BaseModel
         // Must be called first so we don't
         // strip out created_at values.
         $data = $this->doProtectFields($data);
-
+        
         // doProtectFields() can further remove elements from
         // $data so we need to check for empty dataset again
         if (empty($data)) {
@@ -730,11 +732,15 @@ abstract class BaseModel
         }
 
         $eventData = ['data' => $data];
+        
+
 
         if ($this->tempAllowCallbacks) {
+            
             $eventData = $this->trigger('beforeInsert', $eventData);
         }
 
+        
         $result = $this->doInsert($eventData['data']);
 
         $eventData = [
