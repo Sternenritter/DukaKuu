@@ -20,7 +20,8 @@ class CustomerController extends BaseController
 
           if (!$this->validate($rules)) {
             // $data['validation'] = $this->validator;
-            return $this->response->setJSON([$this->validator, 'status' => 0]);
+            $errors = $this->validator->getErrors();
+            return $this->response->setJSON(['errors' => $errors, 'status' => 0]);
           } else {
             $customerData = [
               'username' => $this->request->getVar('username'),

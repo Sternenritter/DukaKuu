@@ -170,7 +170,19 @@
                     success: function(response) {
                         if (response.status == 1) {
                             alert('You Have Been Registered Successfully');
-                            
+
+                        } else if (response.status == 0) {
+                            let errors = response.errors;
+                            if (errors.username) {
+                                alert('A user with the same username already exists, try a different one');
+                            }
+                            if (errors.email) {
+                                alert('A user with the same email address already exists, try a different one');
+
+                            } 
+                            if (!(errors.email || errors.username)) {
+                                console.log(response);
+                            }
                         } else {
                             console.log(response);
                         }
