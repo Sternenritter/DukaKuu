@@ -113,18 +113,18 @@
     <?php include("components/footer.php"); ?>
     <div class="sign-in-module ud jcc aic" id="module">
         <div class="error_messages">
-            <span class="alert red w-50 my-2 lr jsb aic" id="alert">
+            <!-- <span class="alert red w-100 my-2 lr jsb aic" id="alert">
                 Error message.
                 <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
             </span>
-            <span class="alert success w-50 my-2 lr jsb aic">
+            <span class="alert success w-100 my-2 lr jsb aic">
                 Success message.
                 <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
             </span>
-            <span class="alert warning w-50 my-2 lr jsb aic">
+            <span class="alert warning w-100 my-2 lr jsb aic">
                 Warning message.
                 <button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
-            </span>
+            </span> -->
         </div>
         <div class="bg-white p-4 s-in w-50 br-5 h-fit">
             <div class="header ud w-100">
@@ -180,10 +180,10 @@
     })
 
     function addWarning(message) {
-        let full_message = `<span class="alert warning w-50 my-2 lr jsb aic">` + message +
+        let full_message = `<span class="alert warning w-100 my-2 lr jsb aic">` + message +
             `<button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
                             </span>`;
-        $('#module').prepend(full_message);
+        $('#module>.error_messages').append(full_message);
     }
 
     function login(email, password) {
@@ -192,28 +192,22 @@
                 'email': email,
                 'password': password
             };
-            // $.ajax({
-            //     url : '/customerLogin',
-            //     type : 'POST',
-            //     data : data,
-            //     success : function (response) {}
-            // });
+            $.ajax({
+                url : '/customerLogin',
+                type : 'POST',
+                data : data,
+                success : function (response) {}
+            });
 
         }
 
     }
 
     function validateLoginData(email, password) {
+        $('#module>.error_messages').html('');
         var formIsValid = true;
-        var email, password;
-
         var email_regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-        email = $('#email').val();
-
         var password_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/
-        password = $('#password').val();
-        confirm_password = $('#confirm_password').val();
-
 
         if (!email_regex.test(email)) {
             addWarning('invalid email');
@@ -224,32 +218,32 @@
         }
 
         if (!password_regex.test(password)) {
-            alert('invalid password');
+            addWarning('invalid password');
             $('#password_error').css('display', 'block');
 
             if (password.search(/(?=.*[a-z])/)) {
-                alert('password must have at least one lowercase character');
+                addWarning('password must have at least one lowercase character');
                 $('#password_no_lowercase_error').css('display', 'block');
             } else {
                 $('#password_no_lowercase_error').css('display', 'none');
             }
 
             if (password.search(/(?=.*[A-Z])/)) {
-                alert('password must have at least one uppercase character');
+                addWarning('password must have at least one uppercase character');
                 $('#password_no_uppercase_error').css('display', 'block');
             } else {
                 $('#password_no_uppercase_error').css('display', 'none');
             }
 
             if (password.search(/(?=.*[0-9])/)) {
-                alert('password must have at least one numeric character');
+                addWarning('password must have at least one numeric character');
                 $('#password_no_numeric_error').css('display', 'block');
             } else {
                 $('#password_no_numeric_error').css('display', 'none');
             }
 
             if (password.search(/(?=.{8,})/)) {
-                alert('password must be at least 8 characters long');
+                addWarning('password must be at least 8 characters long');
                 $('#password_length_error').css('display', 'block');
             } else {
                 $('#password_length_error').css('display', 'none');
@@ -266,7 +260,7 @@
         $('#login-btn').on('click', function() {
             let email = $('#user-email').val();
             let password = $('#user-password').val();
-            // login(email, password);
+            login(email, password);
 
         });
     });
