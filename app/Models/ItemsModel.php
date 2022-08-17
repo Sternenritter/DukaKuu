@@ -5,7 +5,7 @@ namespace App\Models;
 use Codeigiter\Model;
 
 class ItemsModel extends Model{
-    
+
     public function __construct(){
 
         parent::__construct();
@@ -13,7 +13,7 @@ class ItemsModel extends Model{
 
     }
 
-    //Query(ies) tob e done upon agreeing on the items scema in db.
+    //Query(ies) to be done upon agreeing on the items schema in db.
     public function addItem(){
 
     }
