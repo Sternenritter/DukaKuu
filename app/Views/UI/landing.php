@@ -32,17 +32,19 @@
                 </div>
             </div>
             <div class="lr aic g-5 w-50 py-thick jce">
-                <img src="assets/fashion1.jpg" alt="" class="img-display">
-                <img src="assets/fashion2.jpg" alt="" class="img-display">
+                <img src="assets/fashion1.jpg" alt="" class="img-display animated-img">
+                <img src="assets/fashion2.jpg" alt="" class="img-display animated-img">
                 <div class="ud h-fit">
-                    <button class="right-angle lr jcc aic">View more <i class="fa-solid fa-angle-right f-large px-3"></i> </button>
+                    <a href="store"><button class="right-angle lr jcc aic">View more <i class="fa-solid fa-angle-right f-large px-3"></i> </button></a>
                 </div>
             </div>
         </div>
         <div class="lr w-100 py-4">
             <div class="ud jce aic g-5">
-                <p class="rotate"><b>SCROLL DOWN</b> </p>
-                <img src="assets/mouse-cursor.png" class="img-sm" alt="">
+                <a href="#section-two" class="ud jce aic g-5 color-darker">
+                    <p class="rotate"><b>SCROLL DOWN</b> </p>
+                    <img src="assets/mouse-cursor.png" class="img-sm" alt="">
+                </a>
             </div>
             <div class="ud w-100 jcc aic g-5">
                 <div class="desc ud jcc aic w-100">
@@ -70,7 +72,7 @@
 
         </div>
     </section>
-    <section class="section-two ud w-100 p-4 bg-dark g-5">
+    <section class="section-two ud w-100 p-4 bg-dark g-5" id="section-two">
         <div class="ud w-100 jcc aic c-white">
             <h3 class="f-lato">OUR CLIENTS</h3>
             <span class="line"></span>
@@ -193,10 +195,10 @@
                 'password': password
             };
             $.ajax({
-                url : '/customerLogin',
-                type : 'POST',
-                data : data,
-                success : function (response) {}
+                url: '/customerLogin',
+                type: 'POST',
+                data: data,
+                success: function(response) {}
             });
 
         }

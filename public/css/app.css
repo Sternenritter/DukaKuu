@@ -391,6 +391,9 @@ label {
 .w-fit {
   width: fit-content;
 }
+.color-darker {
+  color: #333;
+}
 .color-dark {
   color: #707070;
 }
@@ -443,6 +446,11 @@ thead {
   border: none;
   width: 100%;
 }
+.active {
+  background-color: #bdbdbd;
+  color: #333;
+  font-size: larger;
+}
 .side-btn:hover {
   background-color: #707070;
 }
@@ -465,4 +473,7 @@ thead {
 }
 .tbody tr {
   border-bottom: 1px solid #707070;
+}
+.animated-img:hover {
+  transform: scale(1.05);
 }

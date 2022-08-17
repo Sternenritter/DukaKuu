@@ -45,7 +45,7 @@
     <section class="w-100 lr aic">
         <div class="ud w-25 aic jsb custom-dark h-100-vh">
             <div class="ud w-100 aic h-fit">
-                <button class="side-btn" id="dash-btn">
+                <button class="side-btn active" id="dash-btn">
                     DASHBOARD
                 </button>
                 <button class="side-btn" id="user-btn">
@@ -93,24 +93,48 @@
         dash_panel.style.display = "none";
         products_panel.style.display = "none";
         profile_panel.style.display = "none";
+
+        //buttons
+        user_panel_btn.classList.add("active");
+        dash_panel_btn.className = "side-btn";
+        products_panel_btn.className = "side-btn";
+        profile_panel_btn.className = "side-btn";
     })
     dash_panel_btn.addEventListener("click", function() {
         user_panel.style.display = "none";
         dash_panel.style.display = "inline-flex";
         products_panel.style.display = "none";
         profile_panel.style.display = "none";
+
+        //button toggle hardcode
+        dash_panel_btn.classList.add("active");
+        user_panel_btn.className = "side-btn";
+        products_panel_btn.className = "side-btn";
+        profile_panel_btn.className = "side-btn";
     })
     products_panel_btn.addEventListener("click", function() {
         user_panel.style.display = "none";
         dash_panel.style.display = "none";
         products_panel.style.display = "inline-flex";
         profile_panel.style.display = "none";
+
+        //buttons
+        products_panel_btn.classList.add("active");
+        dash_panel_btn.className = "side-btn";
+        user_panel_btn.className = "side-btn";
+        profile_panel_btn.className = "side-btn";
     })
     profile_panel_btn.addEventListener("click", function() {
         user_panel.style.display = "none";
         dash_panel.style.display = "none";
         products_panel.style.display = "none";
         profile_panel.style.display = "inline-flex";
+
+        //buttons
+        profile_panel_btn.classList.add("active");
+        dash_panel_btn.className = "side-btn";
+        products_panel_btn.className = "side-btn";
+        user_panel_btn.className = "side-btn";
     })
 </script>
 
