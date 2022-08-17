@@ -16,7 +16,7 @@
         <div class="lr w-100 jsb px-4 py-1">
             <div class="w-custom-table table-container color-dark h-70 px-4">
                 <table class="w-100 color-dark">
-                    <thead class="py-custom">
+                    <thead class="cart-thead">
                         <tr class="aic tac jcc">
                             <th class="py-2">ITEM</th>
                             <th class="py-2">DESCRIPTION</th>

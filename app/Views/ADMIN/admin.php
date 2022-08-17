@@ -46,15 +46,19 @@
         <div class="ud w-25 aic jsb custom-dark h-100-vh">
             <div class="ud w-100 aic h-fit">
                 <button class="side-btn active" id="dash-btn">
+                    <i class="fa-solid fa-warehouse font-large"></i>
                     DASHBOARD
                 </button>
                 <button class="side-btn" id="user-btn">
+                    <i class="fa-solid font-large fa-users"></i>
                     USERS
                 </button>
                 <button class="side-btn" id="products-btn">
+                    <i class="fa-solid font-large fa-boxes-packing"></i>
                     PRODUCTS
                 </button>
                 <button class="side-btn" id="profile-btn">
+                    <i class="fa-solid font-large fa-address-card"></i>
                     PROFILE
                 </button>
             </div>
@@ -135,6 +139,60 @@
         dash_panel_btn.className = "side-btn";
         products_panel_btn.className = "side-btn";
         user_panel_btn.className = "side-btn";
+    })
+
+    const inpFile = document.getElementById("item_img");
+    const PreviewImage = document.querySelector(".image_preview");
+
+    inpFile.addEventListener("change", function() {
+        const file = this.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener("load", function() {
+                PreviewImage.setAttribute("src", this.result);
+            });
+
+            reader.readAsDataURL(file);
+        }
+
+
+    })
+    var module = document.getElementById("add-products-module");
+    // var alert = document.getElementById("alert");
+
+    function showModule() {
+        module.style.display = "inline-flex";
+    }
+
+    function closeModule() {
+        module.style.display = "none";
+    }
+    module.addEventListener('click', e => {
+        if (e.target == module) {
+            module.style.display = "none";
+        }
+    }, {
+        capture: true
+    })
+
+    var UserModule = document.getElementById("add-users-module");
+    // var alert = document.getElementById("alert");
+
+    function showUserModule() {
+        UserModule.style.display = "inline-flex";
+    }
+
+    function closeUserModule() {
+        UserModule.style.display = "none";
+    }
+    UserModule.addEventListener('click', e => {
+        if (e.target == UserModule) {
+            UserModule.style.display = "none";
+        }
+    }, {
+        capture: true
     })
 </script>
 
