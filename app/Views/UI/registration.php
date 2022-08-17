@@ -152,10 +152,36 @@
         return formIsValid;
     }
 
+    function login(email, password) {
+        data = {
+            'email': email,
+            'password': password
+        };
+        $.ajax({
+            url: '/customerLogin',
+            type: 'POST',
+            data: data,
+            success: function(response) {
+                if (response.status == 1) {
+                   window.location.replace('<?= base_url(); ?>');
+                } else if (response.status == 0) {
+                    $('#module>.error_messages').html('');
+                    let errors = response.errors;
+                    addError(errors.password);
+                } else {
+                    console.log(response);
+                }
+            }
+        });
+
+
+
+    }
+
     $(document).ready(function() {
         $("#signupBtn").on("click", function() {
             if (validateRegistrationData()) {
-                data = {
+                let data = {
                     username: $('#username').val(),
                     first_name: $('#first_name').val(),
                     last_name: $('#last_name').val(),
@@ -170,6 +196,8 @@
                     success: function(response) {
                         if (response.status == 1) {
                             alert('You Have Been Registered Successfully');
+                            login(data.email, data.password);
+
 
                         } else if (response.status == 0) {
                             let errors = response.errors;
