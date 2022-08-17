@@ -25,7 +25,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tbody">
                         <tr class="py-4 aic tac jcc">
                             <td class="w-15-vw ">
                                 <div class="ud g-1 jcc aic p-4">
