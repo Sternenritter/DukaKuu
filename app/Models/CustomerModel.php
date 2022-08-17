@@ -31,4 +31,25 @@ class CustomerModel extends Model {
         
         return $data;
     }
+
+    //username is assumed to be the unique index for customers.
+    //Same delete logic applicable for items upon implementations 
+    public function deleteCustomer($customer_id){
+        if($this->db->query("DELETE FROM customers WHERE username = '$customer_id'")){
+            return "Success in deleting customer";
+        }
+        else{
+            return  "Failed in deleting customer";
+        }
+    }
+
+    //Items can as well be dealt with in a separate model for organization purposes..
+    public function addItem(){
+
+    }
+    public function deleteItem(){
+
+    }
+
+
 }
