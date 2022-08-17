@@ -188,6 +188,13 @@
         $('#module>.error_messages').append(full_message);
     }
 
+    function addError(message) {
+        let full_message = `<span class="alert red w-100 my-2 lr jsb aic">` + message +
+            `<button class="close-popup" onclick="closeAlert()"><i class="fa-solid fa-xmark"></i></button>
+                            </span>`;
+        $('#module>.error_messages').append(full_message);
+    }
+
     function login(email, password) {
         if (validateLoginData(email, password)) {
             data = {
@@ -195,10 +202,10 @@
                 'password': password
             };
             $.ajax({
-                url: '/customerLogin',
-                type: 'POST',
-                data: data,
-                success: function(response) {}
+                url : '/customerLogin',
+                type : 'POST',
+                data : data,
+                success : function (response) {}
             });
 
         }
