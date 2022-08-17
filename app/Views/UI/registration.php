@@ -10,7 +10,7 @@
         <img src="assets/DukaKuu.png" alt="" class="img-logo">
     </nav>
 
-    <section class="registration ud aic jcc w-75 py-4">
+    <section class="registration ud aic jcc w-75 py-4 r-box">
         <div class="ud aic jcc">
             <h3>CREATE AN ACCOUNT HERE</h3>
             <span class="line-dark my-3"></span>

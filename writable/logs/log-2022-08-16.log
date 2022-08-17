@@ -53,3 +53,15 @@ CRITICAL - 2022-08-16 09:27:00 --> Call to undefined function App\Validation\Cus
 #7 /home/cyprian/Projects/coderriters/DukaKuu/public/index.php(37): CodeIgniter\CodeIgniter->run()
 #8 /home/cyprian/Projects/coderriters/DukaKuu/system/Commands/Server/rewrite.php(43): require_once('...')
 #9 {main}
+CRITICAL - 2022-08-16 18:29:15 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\Users\fuhrer\Documents\Personal Projects\DukaKuu\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Users\fuhrer\Documents\Personal Projects\DukaKuu\spark(45): require('C:\\Users\\fuhrer...')
+#2 {main}
+CRITICAL - 2022-08-16 18:50:21 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\Users\fuhrer\Documents\Personal Projects\DukaKuu\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Users\fuhrer\Documents\Personal Projects\DukaKuu\spark(45): require('C:\\Users\\fuhrer...')
+#2 {main}
+CRITICAL - 2022-08-16 19:10:12 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\Users\fuhrer\Documents\Personal Projects\DukaKuu\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Users\fuhrer\Documents\Personal Projects\DukaKuu\spark(45): require('C:\\Users\\fuhrer...')
+#2 {main}
