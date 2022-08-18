@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Codeigiter\Model;
 
-class ItemsModel extends Model{
+class ProductModel extends Model{
 
     public function __construct(){
 

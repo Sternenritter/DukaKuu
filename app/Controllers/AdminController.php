@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 // use App\Models\AdminModel;
 use App\Models\CustomerModel;
-use App\Models\ItemsModel;
+use App\Models\ProductModel;
 
 class AdminController extends BaseController{
     //Admin credenials are static(for now) hence stored in variables..
