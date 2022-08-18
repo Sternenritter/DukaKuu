@@ -40,6 +40,12 @@ $routes->get('admin', 'Home::admin');
 $routes->post('/registerCustomer', 'CustomerController::registerCustomer');
 $routes->post('/customerLogin', 'CustomerController::login');
 
+//Proudcuts
+$routes->get('/getCategories', 'ProductController::getCategories');
+$routes->post('/getProductsByCategory', 'ProductController::getProductsByCategory');
+
+
+
 
 /*
  * --------------------------------------------------------------------

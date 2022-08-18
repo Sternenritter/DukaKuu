@@ -1,11 +1,18 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Host: localhost
 -- Generation Time: Aug 18, 2022 at 01:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
+=======
+-- Host: 127.0.0.1
+-- Generation Time: Aug 18, 2022 at 05:44 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +25,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `DukaKuu`
+-- Database: `dukakuu`
 --
 
 -- --------------------------------------------------------
@@ -29,14 +36,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
+<<<<<<< HEAD
   `user_id` int(11) NOT NULL,
   `total` int(11) DEFAULT NULL,
   `status` text NOT NULL
+=======
+  `total` int(11) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `cart_item`
 --
 
@@ -44,6 +58,14 @@ CREATE TABLE `cart_item` (
   `cart_item_id` int(11) NOT NULL,
   `cart_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
+=======
+-- Table structure for table `cart_items`
+--
+
+CREATE TABLE `cart_items` (
+  `item_id` int(11) NOT NULL,
+  `cart_id` int(11) DEFAULT NULL,
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -55,8 +77,13 @@ CREATE TABLE `cart_item` (
 
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
+<<<<<<< HEAD
   `category_name` varchar(20) NOT NULL,
   `is_deleted` enum('0','1') NOT NULL DEFAULT '0'
+=======
+  `category_name` varchar(100) NOT NULL,
+  `is_deleted` int(11) NOT NULL
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -105,6 +132,21 @@ CREATE TABLE `product` (
   `is_deleted` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `product_description` varchar(200) NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `image_path` varchar(200) NOT NULL,
+  `is_deleted` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -114,6 +156,7 @@ CREATE TABLE `product` (
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
+<<<<<<< HEAD
   ADD KEY `fk_user_id` (`user_id`);
 
 --
@@ -123,6 +166,16 @@ ALTER TABLE `cart_item`
   ADD PRIMARY KEY (`cart_item_id`),
   ADD KEY `fk_cart_id` (`cart_id`),
   ADD KEY `fk_product_id` (`product_id`);
+=======
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `cart_items`
+--
+ALTER TABLE `cart_items`
+  ADD PRIMARY KEY (`item_id`),
+  ADD KEY `cart_id` (`cart_id`);
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 
 --
 -- Indexes for table `category`
@@ -143,7 +196,11 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
+<<<<<<< HEAD
   ADD KEY `fk_category` (`category`);
+=======
+  ADD KEY `category_id` (`category_id`);
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -156,10 +213,17 @@ ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `cart_item`
 --
 ALTER TABLE `cart_item`
   MODIFY `cart_item_id` int(11) NOT NULL AUTO_INCREMENT;
+=======
+-- AUTO_INCREMENT for table `cart_items`
+--
+ALTER TABLE `cart_items`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -171,7 +235,11 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
+<<<<<<< HEAD
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+=======
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -187,6 +255,7 @@ ALTER TABLE `product`
 -- Constraints for table `cart`
 --
 ALTER TABLE `cart`
+<<<<<<< HEAD
   ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `customers` (`user_id`);
 
 --
@@ -195,12 +264,25 @@ ALTER TABLE `cart`
 ALTER TABLE `cart_item`
   ADD CONSTRAINT `fk_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`),
   ADD CONSTRAINT `fk_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+=======
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `customers` (`user_id`);
+
+--
+-- Constraints for table `cart_items`
+--
+ALTER TABLE `cart_items`
+  ADD CONSTRAINT `cart_items_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 
 --
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
+<<<<<<< HEAD
   ADD CONSTRAINT `fk_category` FOREIGN KEY (`category`) REFERENCES `category` (`category_id`);
+=======
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
+>>>>>>> a14f3f9f21495e90f10f74f7198c9d29a3769263
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

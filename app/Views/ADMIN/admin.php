@@ -87,8 +87,10 @@
     const products_panel = document.getElementById("products-panel");
     const profile_panel = document.getElementById("profile-panel");
     const user_panel_btn = document.getElementById("user-btn");
+    const user_dash_btn = document.getElementById("users-dash-btn");
     const dash_panel_btn = document.getElementById("dash-btn");
     const products_panel_btn = document.getElementById("products-btn");
+    const products_dash_btn = document.getElementById("products-dash-btn");
     const profile_panel_btn = document.getElementById("profile-btn");
 
 
@@ -128,6 +130,18 @@
         user_panel_btn.className = "side-btn";
         profile_panel_btn.className = "side-btn";
     })
+    products_dash_btn.addEventListener("click", function() {
+        user_panel.style.display = "none";
+        dash_panel.style.display = "none";
+        products_panel.style.display = "inline-flex";
+        profile_panel.style.display = "none";
+
+        //buttons
+        products_panel_btn.classList.add("active");
+        dash_panel_btn.className = "side-btn";
+        user_panel_btn.className = "side-btn";
+        profile_panel_btn.className = "side-btn";
+    })
     profile_panel_btn.addEventListener("click", function() {
         user_panel.style.display = "none";
         dash_panel.style.display = "none";
@@ -139,6 +153,18 @@
         dash_panel_btn.className = "side-btn";
         products_panel_btn.className = "side-btn";
         user_panel_btn.className = "side-btn";
+    })
+    user_dash_btn.addEventListener("click", function() {
+        user_panel.style.display = "inline-flex";
+        dash_panel.style.display = "none";
+        products_panel.style.display = "none";
+        profile_panel.style.display = "none";
+
+        //buttons
+        user_panel_btn.classList.add("active");
+        dash_panel_btn.className = "side-btn";
+        products_panel_btn.className = "side-btn";
+        profile_panel_btn.className = "side-btn";
     })
 
     const inpFile = document.getElementById("item_img");
