@@ -112,6 +112,40 @@ a:hover {
   height: 70vh;
   overflow-y: scroll;
 }
+.h-50vh {
+  height: 40vh;
+}
+.tas {
+  text-align: start;
+}
+.mono{
+  font-family: monospace;
+}
+.h-50p {
+  height: 60%;
+  overflow-y: scroll;
+}
+.h-40p {
+  height: 40%;
+  overflow-y: scroll;
+}
+.line-straight {
+  height: 70%;
+  width: 2px;
+  background-color: #707070;
+}
+.border-grey {
+  border: 2px solid #707070;
+  border-radius: 5px;
+}
+.h-inherit {
+  height: inherit;
+}
+.num {
+  font-family: "Antic Slab", serif;
+  padding-block: .5rem;
+  font-size: 5vh;
+}
 .h-store {
   height: 87vh;
 }
@@ -399,7 +433,7 @@ label {
   width: 0.5vw;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #333;
+  background-color: #707070;
   border-radius: 20px;
 }
 *::-webkit-scrollbar-track {
@@ -411,6 +445,9 @@ label {
 .w-custom-table {
   width: 65vw;
 }
+.overflow-scroll {
+  overflow-y: scroll;
+}
 .tbody tr {
   border-bottom: 1px solid #707070;
 }
@@ -421,6 +458,9 @@ label {
   background-color: #bdbdbd;
   color: #333;
   font-size: larger;
+}
+.color-dark {
+  color: #707070;
 }
 .color-darker {
   color: #333;
