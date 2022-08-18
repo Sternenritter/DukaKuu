@@ -14,11 +14,11 @@ class AdminController extends BaseController{
 
         // $adminModel = new AdminModel();
         if($this->request->getMethod==='post'){
-            if($this->request->getPost('email') === $adminEmail && $this->request->getPost('password') === $adminPassword){
+            if($this->request->getPost('user-email') === $adminEmail && $this->request->getPost('user-password') === $adminPassword){
                 return redirect()->to('home/admin');
             }
             else{
-                return redirect()->to('home/login');
+                return redirect()->to('home/index');
             }
         }
     }
