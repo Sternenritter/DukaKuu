@@ -9,7 +9,7 @@
                 <div class="users-card w-25 ud custom-dark br-5 aic jsa">
                     <h3 class="underline">CURRENT USERS</h3>
                     <h2 class="num">100</h2>
-                    <button class="btn btn-outline-light w-50">
+                    <button class="btn btn-outline-light w-50" id="users-dash-btn">
                         View All Users
                     </button>
                 </div>
@@ -257,7 +257,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-outline-light">
+            <button class="btn btn-outline-light" id="products-dash-btn">
                 VIEW ALL PRODUCTS
             </button>
         </div>
