@@ -15,6 +15,7 @@ class CategoryModel extends Model {
             return "Failed";
         }
     }
+    
     public function deleteCategory($categoryID){
 
         if($this->db->query("DELETE FROM category WHERE category_id='$categoryID'")){
