@@ -202,10 +202,10 @@
                 'password': password
             };
             $.ajax({
-                url : '/customerLogin',
-                type : 'POST',
-                data : data,
-                success : function (response) {}
+                url: '/customerLogin',
+                type: 'POST',
+                data: data,
+                success: function(response) {}
             });
 
         }
