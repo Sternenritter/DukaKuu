@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\CustomerModel;
-use App\Models\ItemsModel;
+use App\Models\ProductModel;
 
 class CustomerController extends BaseController
 {
